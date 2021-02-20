@@ -13,6 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Cat Lover</title>
 </head> 
@@ -61,6 +63,81 @@
             
         </nav>
  
+<!-- Search/Filter -->
+
+
+<div class="container">
+  <div id="mySidebar" class="sidebar">
+    <h2 class="sidebartitle">Filter</h2>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="sidebarsection">
+      <h3>Publisher type</h3>
+      <div class="form-check sidebarcheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="check_organizations">
+        <label class="form-check-label" for="check_organizations">
+          organizations
+        </label>
+      </div>
+      <div class="form-check sidebarcheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="check_individuals">
+        <label class="form-check-label" for="check_individuals">
+          individuals
+        </label>
+      </div>
+    </div>
+
+    <div class="sidebarsection">
+      <h3>Sort by</h3>
+      <div class="form-check sidebarcheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="check_popular">
+        <label class="form-check-label" for="check_popular">
+          popular
+        </label>
+      </div>
+      <div class="form-check sidebarcheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="check_recent">
+        <label class="form-check-label" for="check_recent">
+            recent
+        </label>
+      </div>
+      <div class="form-check sidebarcheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="check_follow">
+        <label class="form-check-label" for="check_follow">
+          following
+        </label>
+      </div>
+    </div>
+
+    <div class="sidebarsection">
+      <h3>Adoption status</h3>
+      <div class="form-check sidebarcheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="check_available">
+        <label class="form-check-label" for="check_available">
+          available
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div id="main">
+    <h2>Share a story of your stray cat</h2>
+    <div class="searchsection">
+      <button class="filterbtn" onclick="openNav()">☰ Filter</button>
+      <form class="navbar-form" role="search">
+        <div class="input-group searchfield">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        </form>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Photos Section -->
 <div class="container">
 
   <div class="grid">
@@ -155,6 +232,16 @@
   items: '.grid-item'
 })
 </script>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+  </script>
 
 </body>
 
