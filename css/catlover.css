@@ -100,13 +100,19 @@ h1 {
     display: flex;
 }
 
+.grid-item {
+    margin-top: 15px;
+}
+
 .grid-item img {
     border-radius: 10px;
+    width: 100%;
+    margin-bottom: 0.2em;
 }
 
 .grid-col {
     flex: 1;
-    padding: 0 .1em;
+    padding: 0 0.2em;
 }
 
 .grid-col--2,
@@ -143,8 +149,6 @@ h1 {
         margin-bottom: .8em;
     }
 
-
-
     .content {
         opacity: 0;
         transform: translateX(-.5em);
@@ -157,6 +161,7 @@ h1 {
     }
 
     .grid-item img {
+        border-radius: 10px;
         width: 100%;
     }
 
