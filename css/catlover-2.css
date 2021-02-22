@@ -1,0 +1,46 @@
+.btn-outline{
+    border-color: #F0A590;
+    border-radius: auto;
+    color: #F0A590;
+}
+
+.btn-outline:hover {
+    background-color: #91BAA1;
+    border-color: #91BAA1;
+	color: #FFF;
+}
+
+.btn-outline-muted:{
+	background-color: #FFFFFF;
+    border-color: #FFFFFF;
+	color: #FFFFFF;
+}
+
+.btn-outline-choose{
+	border-color: #F0A590;
+    border-radius: auto;
+    color: #F0A590;
+}
+
+.btn-outline-choose:hover {
+    background-color: #F0A590;
+    border-color: #F0A590;
+	color: #FFF;
+}
+
+.btn-outline-remove{
+	border-color: #91BAA1;
+    border-radius: auto;
+    color: #91BAA1;
+}
+
+.btn-outline-remove:hover {
+    background-color: #91BAA1;
+    border-color: #91BAA1;
+	color: #FFF;
+}
+
+.list-group-horizontal-lg-upload{
+	wight: 100%
+}
+
