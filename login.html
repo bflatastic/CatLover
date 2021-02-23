@@ -1,112 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/catlover.css">
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/colcade.js"></script> 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/catlover.css">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/colcade.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Login</title>
+  <title>Login</title>
 
-    <style>
-        
-    </style>
-</head> 
+  <style>
+
+  </style>
+</head>
 
 <body>
 
-<div class="container">
+  <div class="container">
     <div class="text-center">
-        <div class="form-signin">
-            <div class="form-inner">
-                
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Log in</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Sign up</button>
-                    </li>
-                  </ul>
-                  <div class="tab-content" id="myTabContent">
-                      
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <img src="img/Avatar-1.png" alt="">
-                <h2>Sign in to your account</h2>
-                <form id="login" name="login" method="post" action="{{ @BASE }}/login">
-                    <input class="input-field" name="email" type="email" placeholder="Email" id="email" required />
-                    
-                    <input class="input-field" name="password" type="password" placeholder="Password" id="password" required />
-                     
-                        <input class="btn btn-primary" type="submit" name="submit" value="Log in" />
-                        
-                         <p><a href="...">Back</a></p>
-                        </form> 
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <img src="img/Avatar-1.png" alt="">
-                            <h2>Create an account</h2>
-                        <form id="signup" name="signup" method="post" action="{{ @BASE }}/signup-complete">
-                            
-                            <input class="input-field" class="input-field" name="name" type="text" placeholder="Name*" id="name" required />
-                            
-                            <input class="input-field" class="input-field" name="email" type="email" placeholder="Email*" id="email" required />
-                            
-                              <input class="input-field" name="password" type="password" placeholder="Password*" id="password" required />
-                            
-                              <input class="input-field" name="password_confirm" type="password" placeholder="Confirm password*" id="password_confirm" required oninput="check(this)"/>
-                            
-                            <script language='javascript' type='text/javascript'>
-                              function check(input) {
-                                if (input.value != document.getElementById('password').value) {
-                                  input.setCustomValidity('Password must be matching.');
-                                } else {
-                                  // input is valid -- reset the error message
-                                  input.setCustomValidity('');
-                                }
-                              }
-                            </script>
-                          <p class="question">Please choose the option that best describes you*
-                              <br>
-                            <select name="usertype" id="usertype" required>
-                              <option value="cat lover">Cat lover</option>
-                              <option value="shelter">Shelter</option>
-                            </select>
-                          </p>
-                            <p class="question">Are you currently looking to adopt a cat?
-                                <br>
-                            <select name="adopting" id="adopting">
-                              <option value=""></option>
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                              <option value="maybe">Maybe</option>
-                            </select>
-                        </p>
-                          
-                            <input class="btn btn-primary" type="submit" name="Submit" value="Sign up" />
-                          
-                          <p><a href="...">Back</a></p>
-                          </form>
-                    </div>
-                  </div>
+      <div class="form-signin">
+        <div class="form-inner">
 
-                
-</form>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                role="tab" aria-controls="home" aria-selected="true">Log in</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                role="tab" aria-controls="profile" aria-selected="false">Sign up</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <img src="img/Avatar-1.png" alt="">
+              <h2>Sign in to your account</h2>
+              <form id="login" name="login" method="post" action="{{ @BASE }}/login">
+                <input class="input-field" name="email" type="email" placeholder="Email" id="email" required />
+
+                <input class="input-field" name="password" type="password" placeholder="Password" id="password"
+                  required />
+
+                <input class="btn btn-primary" type="submit" name="submit" value="Log in" />
+
+                <p><a href="...">Back</a></p>
+              </form>
             </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <img src="img/Avatar-1.png" alt="">
+              <h2>Create an account</h2>
+              <form id="signup" name="signup" method="post" action="{{ @BASE }}/signup-complete">
+
+                <input class="input-field" class="input-field" name="name" type="text" placeholder="Name*" id="name"
+                  required />
+
+                <input class="input-field" class="input-field" name="email" type="email" placeholder="Email*" id="email"
+                  required />
+
+                <input class="input-field" name="password" type="password" placeholder="Password*" id="password"
+                  required />
+
+                <input class="input-field" name="password_confirm" type="password" placeholder="Confirm password*"
+                  id="password_confirm" required oninput="check(this)" />
+
+                <script language='javascript' type='text/javascript'>
+                  function check(input) {
+                    if (input.value != document.getElementById('password').value) {
+                      input.setCustomValidity('Password must be matching.');
+                    } else {
+                      // input is valid -- reset the error message
+                      input.setCustomValidity('');
+                    }
+                  }
+                </script>
+                <p class="question">Please choose the option that best describes you*
+                  <br>
+                  <select name="usertype" id="usertype" required>
+                    <option value="cat lover">Cat lover</option>
+                    <option value="shelter">Shelter</option>
+                  </select>
+                </p>
+                <p class="question">Are you currently looking to adopt a cat?
+                  <br>
+                  <select name="adopting" id="adopting">
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="maybe">Maybe</option>
+                  </select>
+                </p>
+
+                <input class="btn btn-primary" type="submit" name="Submit" value="Sign up" />
+
+                <p><a href="...">Back</a></p>
+              </form>
+            </div>
+          </div>
+
+
+          </form>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 </body>
 
