@@ -173,6 +173,7 @@ h3 {
 }
 
 .gradient-overlay::after {
+    pointer-events: none;
     content: '';
     position: absolute;
     bottom: 0;
@@ -222,6 +223,9 @@ h3 {
     padding-left: 8px;
 }
 
+#modalimage {
+    width: 100%;
+}
 
 .sidebar {
     height: 100%;
