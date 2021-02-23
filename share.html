@@ -1,245 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/catlover.css">
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/colcade.js"></script> 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/catlover.css">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/colcade.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Cat Lover</title>
-</head> 
+  <title>Cat Lover</title>
+</head>
 
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
 
-            <div class="container">
+    <div class="container">
 
-            <div class="navbar-brand">
-                <a class="navbar-brand" href="#">
-                    <img
-                      src="img/catlover-logo.png"   
-                      height="24"
-                      alt=""
-                      loading="lazy"    
-                    />
-                  </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="main.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="share.html">Share</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Message Board</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
-                    </li>
-                </ul>   
-                <a class="btn btn-outline-primary" href="#">Sign Up</a>
-             </div>
-
-            </div>
-            
-</nav>
-
-<!-- Search/Filter -->
-<div class="container">
-  <div id="mySidebar" class="sidebar">
-    <h2 class="sidebartitle">Filter</h2>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <div class="sidebarsection">
-      <h3>Publisher type</h3>
-      <div class="form-check sidebarcheckbox">
-        <input class="form-check-input" type="checkbox" value="" id="check_organizations">
-        <label class="form-check-label" for="check_organizations">
-          organizations
-        </label>
+      <div class="navbar-brand">
+        <a class="navbar-brand" href="#">
+          <img src="img/catlover-logo.png" height="24" alt="" loading="lazy" />
+        </a>
       </div>
-      <div class="form-check sidebarcheckbox">
-        <input class="form-check-input" type="checkbox" value="" id="check_individuals">
-        <label class="form-check-label" for="check_individuals">
-          individuals
-        </label>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="share.html">Share</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Message Board</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log In</a>
+          </li>
+        </ul>
+        <a class="btn btn-outline-primary" href="#">Sign Up</a>
       </div>
+
     </div>
 
-    <div class="sidebarsection">
-      <h3>Sort by</h3>
-      <div class="form-check sidebarcheckbox">
-        <input class="form-check-input" type="checkbox" value="" id="check_popular">
-        <label class="form-check-label" for="check_popular">
-          popular
-        </label>
+  </nav>
+
+  <!-- Search/Filter -->
+  <div class="container">
+    <div id="mySidebar" class="sidebar">
+      <h2 class="sidebartitle">Filter</h2>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class="sidebarsection">
+        <h3>Publisher type</h3>
+        <div class="form-check sidebarcheckbox">
+          <input class="form-check-input" type="checkbox" value="" id="check_organizations">
+          <label class="form-check-label" for="check_organizations">
+            organizations
+          </label>
+        </div>
+        <div class="form-check sidebarcheckbox">
+          <input class="form-check-input" type="checkbox" value="" id="check_individuals">
+          <label class="form-check-label" for="check_individuals">
+            individuals
+          </label>
+        </div>
       </div>
-      <div class="form-check sidebarcheckbox">
-        <input class="form-check-input" type="checkbox" value="" id="check_recent">
-        <label class="form-check-label" for="check_recent">
+
+      <div class="sidebarsection">
+        <h3>Sort by</h3>
+        <div class="form-check sidebarcheckbox">
+          <input class="form-check-input" type="checkbox" value="" id="check_popular">
+          <label class="form-check-label" for="check_popular">
+            popular
+          </label>
+        </div>
+        <div class="form-check sidebarcheckbox">
+          <input class="form-check-input" type="checkbox" value="" id="check_recent">
+          <label class="form-check-label" for="check_recent">
             recent
-        </label>
+          </label>
+        </div>
+        <div class="form-check sidebarcheckbox">
+          <input class="form-check-input" type="checkbox" value="" id="check_follow">
+          <label class="form-check-label" for="check_follow">
+            following
+          </label>
+        </div>
       </div>
-      <div class="form-check sidebarcheckbox">
-        <input class="form-check-input" type="checkbox" value="" id="check_follow">
-        <label class="form-check-label" for="check_follow">
-          following
-        </label>
+
+      <div class="sidebarsection">
+        <h3>Adoption status</h3>
+        <div class="form-check sidebarcheckbox">
+          <input class="form-check-input" type="checkbox" value="" id="check_available">
+          <label class="form-check-label" for="check_available">
+            available
+          </label>
+        </div>
       </div>
     </div>
 
-    <div class="sidebarsection">
-      <h3>Adoption status</h3>
-      <div class="form-check sidebarcheckbox">
-        <input class="form-check-input" type="checkbox" value="" id="check_available">
-        <label class="form-check-label" for="check_available">
-          available
-        </label>
-      </div>
-    </div>
-  </div>
-  
-  <div id="main">
-    <h2>Share a story of your stray cat</h2>
-    <div class="searchsection">
-      <button class="filterbtn" onclick="openNav()">☰ Filter</button>
-      <form class="navbar-form" role="search">
-        <div class="input-group searchfield">
+    <div id="main">
+      <h2>Share a story of your stray cat</h2>
+      <div class="searchsection">
+        <button class="filterbtn" onclick="openNav()">☰ Filter</button>
+        <form class="navbar-form" role="search">
+          <div class="input-group searchfield">
             <input type="text" class="form-control" placeholder="Search" name="q">
             <div class="input-group-btn">
-                <button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
+              <button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
             </div>
-        </div>
+          </div>
         </form>
-    </div>
-  </div>
-
-</div>
-
-<!-- Photos Section -->
-<div class="container">
-
-  <div class="grid">
-    <div class="grid-col grid-col--1">
-        
-    </div>
-    <div class="grid-col grid-col--2">
-        
-    </div>
-    <div class="grid-col grid-col--3">
-
-    </div>
-
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
       </div>
-      <img src="img/img1.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>
-      </div>
-      <img src="img/img2.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img3.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img4.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img5.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img6.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img7.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img8.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img9.jpg" alt="picture">
-    </div>
-
-    <div class="grid-item">
-      <div class="content">
-        <h2>Edinburgh Cat</h2>  
-      </div>
-      <img src="img/img10.jpg" alt="picture">
     </div>
 
   </div>
-</div>
 
-<!-- Colcade.js Script -->
-<script>
-  $('.grid').colcade({
-  columns: '.grid-col',
-  items: '.grid-item'
-})
-</script>
 
-<script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-  }
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-  }
-</script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="pop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Photos Section -->
+  <div class="container photosection">
+
+    <div class="grid">
+      <div class="grid-col grid-col--1">
+
+      </div>
+      <div class="grid-col grid-col--2">
+
+      </div>
+      <div class="grid-col grid-col--3">
+
+      </div>
+
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+
+        <a href="#staticBackdrop" type="button" data-bs-toggle="modal" data-bs-target="#pop">
+          <img src="img/img1.jpg" alt="picture">
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img2.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img3.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img4.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img5.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img6.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img7.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img8.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img9.jpg" alt="picture">
+      </div>
+
+      <div class="grid-item">
+        <div class="content">
+          <h2>Edinburgh Cat</h2>
+        </div>
+        <img src="img/img10.jpg" alt="picture">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Colcade.js Script -->
+  <script>
+    $('.grid').colcade({
+      columns: '.grid-col',
+      items: '.grid-item'
+    })
+  </script>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
+
+
 
 </body>
 
