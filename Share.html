@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Lovers | Share</title>
+</head>
+
+<body>
+
+<!-- Search/Filter -->
+<div class="container">
+    <div id="mySidebar" class="sidebar">
+        <h2 class="sidebartitle">Filter</h2>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="sidebarsection">
+            <h3>Publisher type</h3>
+            <div class="form-check sidebarcheckbox">
+                <input class="form-check-input" type="checkbox" value="" id="check_organizations">
+                <label class="form-check-label" for="check_organizations">
+                    organizations
+                </label>
+            </div>
+            <div class="form-check sidebarcheckbox">
+                <input class="form-check-input" type="checkbox" value="" id="check_individuals">
+                <label class="form-check-label" for="check_individuals">
+                    individuals
+                </label>
+            </div>
+        </div>
+
+        <div class="sidebarsection">
+            <h3>Sort by</h3>
+            <div class="form-check sidebarcheckbox">
+                <input class="form-check-input" type="checkbox" value="" id="check_popular">
+                <label class="form-check-label" for="check_popular">
+                    popular
+                </label>
+            </div>
+            <div class="form-check sidebarcheckbox">
+                <input class="form-check-input" type="checkbox" value="" id="check_recent">
+                <label class="form-check-label" for="check_recent">
+                    recent
+                </label>
+            </div>
+            <div class="form-check sidebarcheckbox">
+                <input class="form-check-input" type="checkbox" value="" id="check_follow">
+                <label class="form-check-label" for="check_follow">
+                    following
+                </label>
+            </div>
+        </div>
+
+        <div class="sidebarsection">
+            <h3>Adoption status</h3>
+            <div class="form-check sidebarcheckbox">
+                <input class="form-check-input" type="checkbox" value="" id="check_available">
+                <label class="form-check-label" for="check_available">
+                    available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <h2>Stray cat stories</h2>
+        <div class="searchsection">
+            <button class="filterbtn" onclick="openNav()">☰ Filter</button>
+            <form class="navbar-form" role="search">
+                <div class="input-group searchfield">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="pop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row">
+                    <div class="col-lg-7 modal-image-container">
+                        <img id="modalimage" alt="">
+                    </div>
+                    <div class="col-lg-5 modal-info">
+                        <div class="modal-info-title">
+                            <img class="modal-info-pfp w-25" src="ui/img/avatar(3).png" alt="">
+                            <h2>BR Cat Home</h2>
+                        </div>
+                        <div>
+                            <p class="modal-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-tag">
+                            <div class="content-tag">
+                                <p>Available</p>
+                            </div>
+                        </div>
+                        <div>
+                            Contact Info
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Photos Section -->
+<div class="container">
+    <div class="row" data-masonry='{"percentPosition": true }'>
+        <repeat group="{{ @datalist }}" value="{{ @item }}">
+        <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="#pop" type="button" data-bs-toggle="modal" data-bs-target="#pop">
+                <div class="card">
+                    <div class="content-tag">
+                        <p>Available</p>
+                    </div>
+                    <div class="content-profile">
+                        <img class="content-profile-img" src="ui/img/avatar({{@item.picID}}).png" alt="profile-image">
+                        <p class="content-profile-text">{{ @item.picname }}</p>
+                    </div>
+                    <div class="gradient-overlay">
+                        <img src="http://jenniferjones.edinburgh.domains/ImageUploads/{{ @item.picfile }}" alt="{{ @item.picname }}" onclick="onClick(this)">
+                    </div>
+                </div>
+            </a>
+        </div>
+        </repeat>
+
+    </div>
+
+
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+
+        function onClick(element) {
+            document.getElementById("modalimage").src = element.src;
+        };
+    </script>
+
+
+</div>
+</body>
+
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
