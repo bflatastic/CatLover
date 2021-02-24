@@ -223,8 +223,44 @@ h3 {
     padding-left: 8px;
 }
 
+.modal-image-container {
+    min-height: 500px;
+    max-height: 600px;
+    background-color: #000;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #modalimage {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.modal-body {
+    padding: 0;
+    position: relative;
+    overflow-y: auto;
+}
+
+.modal-body .btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+
+    .modal-lg,
+    .modal-xl {
+        max-width: 880px;
+    }
 }
 
 .sidebar {

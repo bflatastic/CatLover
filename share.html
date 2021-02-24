@@ -117,7 +117,7 @@
     </div>
 
     <div id="main">
-      <h2>Share a story of your stray cat</h2>
+      <h2>Stray cat stories</h2>
       <div class="searchsection">
         <button class="filterbtn" onclick="openNav()">☰ Filter</button>
         <form class="navbar-form" role="search">
@@ -136,21 +136,23 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="pop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade" id="pop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        
         <div class="modal-body">
-          <img id="modalimage" alt="">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="row">
+            <div class="col-lg-7 modal-image-container">
+              <img id="modalimage" alt="">
+            </div>
+            <div class="col-lg-5 modal-info">
+              Text and information
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -330,7 +332,7 @@
         </a>
       </div>
 
-      
+
 
     </div>
 
