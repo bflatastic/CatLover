@@ -23,6 +23,9 @@
 
 <body class="bgshare">
 
+  <!-- Back to top button -->
+  <a id="back-top"></a>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 
@@ -372,6 +375,24 @@
       function onClick(element) {
         document.getElementById("modalimage").src = element.src;
       }
+
+      // Back to top button
+      var btn = $('#back-top');
+
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+          btn.addClass('show');
+        } else {
+          btn.removeClass('show');
+        }
+      });
+
+      btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: 0
+        }, '300');
+      });
     </script>
 
 

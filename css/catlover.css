@@ -8,6 +8,10 @@ body {
     padding-top: 70px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .bgwhite {
     background-color: #fff;
 }
@@ -55,6 +59,48 @@ h3 {
 }
 
 /*  Nav   */
+
+#back-top {
+    display: inline-block;
+    background-color: #084635;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: background-color .3s,
+    opacity .5s,
+    visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    }
+
+    #back-top::after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 50px;
+        color: #fff;
+    }
+
+    #back-top:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+
+    #back-top:active {
+        background-color: #555;
+    }
+
+    #back-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
 .navbar-brand img {
     height: 30px;
