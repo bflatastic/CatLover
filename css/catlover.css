@@ -14,6 +14,12 @@ body {
 
 a {
     text-decoration: none;
+    color: #91BAA1;
+}
+
+a:hover {
+    color: #0c4128;
+    transition: 0.5s;
 }
 
 .bgwhite {
@@ -34,9 +40,6 @@ a {
 
 .bgpink {
     background-color: #F8DDD3;
-    background-image: url("../img/bg-home2.png");
-    background-size: 100%;
-    background-position: 0px -100px;
 }
 
 .bgfooter {
@@ -74,8 +77,8 @@ a {
 h1 {
     color: #000;
     font-family: 'Ruslan Display', cursive;
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -86,6 +89,8 @@ h2 {
 
 h3 {
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 /*  Background   */
@@ -107,8 +112,8 @@ h3 {
     bottom: 20px;
     right: 20px;
     transition: background-color .3s,
-        opacity .5s,
-        visibility .5s;
+    opacity .5s,
+    visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
@@ -136,6 +141,7 @@ h3 {
 #back-top.show {
     opacity: 1;
     visibility: visible;
+    z-index: 1000;
 }
 
 .navbar-brand img {
@@ -157,7 +163,7 @@ h3 {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06),
-        0 6px 20px 0 rgba(0, 0, 0, 0.06);
+    0 6px 20px 0 rgba(0, 0, 0, 0.06);
 }
 
 .navbar-toggler {
@@ -210,6 +216,26 @@ h3 {
 }
 
 .btn-primary:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.btn-green,
+.btn-green:hover,
+.btn-green:active,
+.btn-green:visited {
+    background-color: #45685C !important;
+    color: #ffffff;
+}
+
+.btn-green {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px 10px 30px;
+    transition: 0.2s;
+}
+
+.btn-green:hover {
     opacity: 0.8;
     transition: 0.2s;
 }
@@ -614,6 +640,7 @@ h3 {
     height: 50px;
     background-color: #45685c0c;
     color: rgba(0, 0, 0, 0.5);
+    padding-top: 15px;
 }
 
 .form-inner .nav-link.active {
@@ -673,11 +700,27 @@ input {
 .form-inner .question {
     margin-top: 15px;
     margin-bottom: 0px;
+
 }
 
 .form-inner select {
     margin-top: 10px;
-    width: 200px;
+    width: 300px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #ffd2ca;
+    padding-left: 10px;
+}
+
+.form-inner select option {
+    border-radius: 8px !important;
+    border: 1px solid !important;
+    border-color: #ffd2ca !important;
+}
+
+.form-inner select option div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .catform .lastcol {
@@ -910,8 +953,13 @@ input {
     padding-bottom: 2px;
 }
 
-.profile-side a {
-    color: #00A3FF;
+.profile-side a{
+    color: #91BAA1;
+}
+
+.profile-side a:hover {
+    color: #0c4128;
+    transition: 0.5s;
 }
 
 .profile-side-icon {
