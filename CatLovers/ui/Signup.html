@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Cat Lover | Sign up</title>
+</head>
+<body class="home-body">
+
+<div class="container">
+  <div class="text-center">
+    <div class="form-signin">
+      <div class="form-inner">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" id="home-tab" href="{{ @BASE }}/login" data-bs-toggle="tab" data-bs-target="#logintab"
+               role="tab" aria-controls="home" aria-selected="true">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="profile-tab" href="{{ @BASE }}/signup" data-bs-toggle="tab" data-bs-target="#signuptab"
+               role="tab" aria-controls="profile" aria-selected="false">Sign up</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade" id="logintab" role="tabpanel" aria-labelledby="home-tab">
+            <img src="ui/img/Avatar-1.png" alt="">
+            <h1 hidden>Log in</h1>
+            <h2>Sign in to your account</h2>
+            <form id="login" name="login" method="post" action="{{ @BASE }}/login">
+              <input class="input-field" name="email" type="email" placeholder="Email" id="loginemail" required />
+
+              <input class="input-field" name="password" type="password" placeholder="Password" id="loginpassword" required />
+
+              <p class="text-danger mt-3"><include href="{{ @loginerror }}" /></p>
+
+              <input class="btn btn-primary" type="submit" name="submit" value="Log in" />
+
+              <p><a href="{{ @BASE }}/">Home</a></p>
+            </form>
+          </div>
+          <div class="tab-pane fade show active" id="signuptab" role="tabpanel" aria-labelledby="profile-tab">
+            <img src="ui/img/Avatar-1.png" alt="">
+            <h1 hidden>Sign up</h1>
+            <h2>Create an account</h2>
+            <p class="text-muted">* indicates a required field</p>
+            <form id="signup" name="signup" method="post" action="{{ @BASE }}/signup-complete">
+
+              <input class="input-field" class="input-field" name="name" type="text" placeholder="Name*" id="name" required />
+
+              <input class="input-field" class="input-field" name="email" type="email" placeholder="Email*" id="email" required />
+
+              <input class="input-field" name="password" type="password" placeholder="Password*" id="password" required />
+
+              <input class="input-field" name="password_confirm" type="password" placeholder="Confirm password*" id="password_confirm" required oninput="check(this)"/>
+
+              <script language='javascript' type='text/javascript'>
+                // from https://stackoverflow.com/questions/9142527/can-you-require-two-form-fields-to-match-with-html5
+                function check(input) {
+                  if (input.value != document.getElementById('password').value) {
+                    input.setCustomValidity('Password must be matching.');
+                  } else {
+                    // input is valid -- reset the error message
+                    input.setCustomValidity('');
+                  }
+                }
+              </script>
+              <p class="question">Please choose the option that best describes you*
+                <br>
+              <div class="custom-select">
+                <select name="usertype" id="usertype" required>
+                  <option value="cat lover">Cat lover</option>
+                  <option value="shelter">Shelter</option>
+                </select>
+            </div>
+              </p>
+              <p class="question">Are you currently looking to adopt a cat?
+                <br>
+                <div class="custom-select">
+                <select name="adopting" id="adopting">
+                  <option value=""></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="maybe">Maybe</option>
+                </select>
+              </div>
+              </p>
+              <p class="text-danger mt-3"><include href="{{ @signuperror }}" /></p>
+              <input class="btn btn-primary" type="submit" name="Submit" value="Sign up" />
+
+              <p><a href="{{ @BASE }}/">Home</a></p>
+            </form>
+          </div>
+        </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
