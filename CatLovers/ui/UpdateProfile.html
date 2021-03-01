@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cat Lover | Update profile</title>
+
+    <script>
+        $(document).ready(function(){
+            $("#savechanges").click(function(){
+                $('.toast').toast('show');
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div class="container col-md-12">
+
+    <ul class="list-group list-group-horizontal-sm" >
+
+        <li class="list-group-item"><div class="form-group">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <br><br>
+                    <div style="text-align:center">
+                        <script src="ui/js/AvatarChange-script.js"></script>
+                        <a onClick="change();">
+                            <img name="randimg" src="ui/img/avatar({{ @avno }}).png" width="120" height="120" alt="">
+                        </a>
+                    </div>
+                    <p class="text-center text-muted"><small>Click on the avatar to change</small></p>
+                    <br>
+                    <p class ="text-center" ><b>{{ @username }}</b></p>
+                    <p class ="text-center text-lowercase" >{{ @useremail }}</p>
+                    <p class ="text-center" ><i>{{ @usertype }} account</i></p>
+                </li>
+
+                <li class="list-group-item">
+                    <check if="{{ @SESSION.type=='Shelter'}}">
+                        <true>
+                            <br>
+                            <div style="text-align:center">
+                                <a class="btn btn-outline-green text-wrap" href="{{ @BASE }}/agency-certification">Apply for agency certification</a>
+                            </div>
+                            <br>
+                        </true>
+                    </check>
+                </li>
+
+            </ul>
+
+        </div>
+        </li>
+        <li class="list-group-item col-md-6"><div class="form-group">
+            <div><br><br><br>
+                        <p><h5><strong>Update account information</strong></h5></p>
+                <p class="text-success">
+                    <include href="{{ @success }}" />
+                </p>
+                <form id="updateNameForm" name="updateName" method="post" action="{{ @BASE }}/update-name">
+                    <label for="updateName">Name</label>
+                    <div class="input-group mb-3">
+                        <input required type="text" name="updateName" class="form-control input-field" placeholder="{{ @username }}" aria-describedby="updateName">
+                        <button class="btn btn-primary" type="submit" id="updateName">Save name</button>
+                    </div>
+                </form>
+                <form id="updateEmailForm" name="updateEmail" method="post" action="{{ @BASE }}/update-email">
+                    <label for="updateEmail">Email</label>
+                    <div class="input-group mb-3">
+                        <input required type="email" name="updateEmail" class="form-control text-lowercase input-field" placeholder="{{ @useremail }}" aria-describedby="updateEmail">
+                        <button class="btn btn-primary" type="submit" id="updateEmail">Save email</button>
+                    </div>
+                </form>
+                <form id="updatePasswordForm" name="updatePassword" method="post" action="{{ @BASE }}/update-password">
+                    <label for="updateEmail">Change password</label>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control input-field" required placeholder="New password" aria-describedby="updatePassword">
+                        <input type="password" class="form-control input-field" required id="confirmPassword" placeholder="Confirm password" oninput="check(this)"/>
+                        <script language='javascript' type='text/javascript'>
+                            // from https://stackoverflow.com/questions/9142527/can-you-require-two-form-fields-to-match-with-html5
+                            function check(input) {
+                                if (input.value != document.getElementById('updatePassword').value) {
+                                    input.setCustomValidity('Password must be matching.');
+                                } else {
+                                    // input is valid -- reset the error message
+                                    input.setCustomValidity('');
+                                }
+                            }
+                        </script>
+                        <button class="btn btn-primary" type="submit" id="updatePassword">Save password</button>
+                    </div>
+                </form>
+                </div>
+            <check if="{{ @SESSION.type=='Shelter'}}">
+                <true>
+            <div class="form-row">
+                <p><h5><strong>Shelter details</strong></h5></p>
+                <p class="text-muted"><small>You will be able to fill out these details once you have received your Agency Certification.</small></p>
+                <p><div class="form-group col-md-12">
+                    <label for="inputAddress">Address</label>
+                    <input disabled type="text" class="form-control" id="inputAddress" placeholder="Agency certification required">
+                </div></p>
+                <p><div class="form-group col-md-12">
+                    <label for="inputWeb">Website</label>
+                    <input disabled type="text" class="form-control" id="inputWeb" placeholder="Agency certification required">
+                </div></p>
+                <p><div class="form-group col-md-12">
+                <label for="inputPhone">Telephone</label>
+                <input disabled type="tel" class="form-control" id="inputPhone" placeholder="Agency certification required">
+                </div></p>
+                <p><div class="form-group col-md-12">
+                    <label for="inputIntro">Introduction</label>
+                    <textarea disabled rows="3" class="form-control" id="inputIntro" placeholder="Agency certification required"></textarea>
+                </div></p>
+            </div>
+                </true>
+            </check>
+            </div>
+        </li>
+
+        <li class="list-group-item" >
+            <div class="form-group col-md-8">
+                <div class="form-row"><br><br><br>
+                <h5><strong>Upload photos</strong></h5>
+                <br>
+                <div style="text-align:center">
+                   <a href="{{ @BASE }}/upload"><img src="ui/img/upload file.png" width="320" height="435" alt=""></a>
+                </div>
+                <br>
+                </div>
+
+        </div>
+        </li>
+
+    </ul>
+</div>
+
+
+
+
+</body>
+</html>

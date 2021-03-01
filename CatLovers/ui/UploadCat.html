@@ -1,0 +1,82 @@
+<!--
+A very simple input form View template:
+note that the form method is POST, and the action
+is the URL for the route that handles form input.
+ -->
+<check if="{{ @SESSION.type=='Shelter' }}">
+    <false>
+        <span class="notloggedinshelter"> You need a shelter account to access this page.</span>
+        <br /><a href="{{ @BASE }}/login">Log in</a>
+    </false>
+    <true>
+<h1>Upload a cat</h1>
+<p>* indicates a required field</p>
+<form id="uploadcat" name="uploadcat" method="post" action="{{ @BASE }}/upload-cat">
+    <p>
+        Cat Name*
+        <input name="catname" type="text" placeholder="Cat" id="name" required />
+    </p>
+    <p>
+        Sex*
+        <select name="sex" id="sex" required>
+            <option value="male" selected>Male</option>
+            <option value="female">Female</option>
+        </select>
+    <p>
+        (Approximate) Age*
+        <input name="age" type="number" placeholder="5" id="age" required />
+    </p>
+    <p>
+        Date of birth (if known)
+        <input name="dob" type="date" id="dob" />
+    </p>
+    <p>Breed*
+        <select name="breed" id="breed" required>
+            <option value=""></option>
+            <option value="Domestic longhair">Domestic longhair</option>
+            <option value="Domestic shorthair">Domestic shorthair</option>
+            <option value="Abyssinian">Abyssinian</option>
+            <option value="American shorthair">American shorthair</option>
+            <option value="Balinese">Balinese</option>
+            <option value="Bengal">Bengal</option>
+            <option value="Birman">Birman</option>
+            <option value="Bombay">Bombay</option>
+            <option value="British longhair">British longhair</option>
+            <option value="British shorthair">British shorthair</option>
+            <option value="Burmese">Burmese</option>
+            <option value="Chartreux">Chartreux</option>
+            <option value="Cornish rex">Cornish rex</option>
+            <option value="Devon rex">Devon rex</option>
+            <option value="Egyptian mau">Egyptian Mau</option>
+            <option value="Exotic shorthair">Exotic shorthair</option>
+            <option value="Javanese">Javanese</option>
+            <option value="Maine coon">Maine Coon</option>
+            <option value="Manx">Manx</option>
+            <option value="Norwegian forest">Norweigian forest</option>
+            <option value="Oriental longhair">Oriental longhair</option>
+            <option value="Oriental shorthair">Oriental shorthair</option>
+            <option value="Persian">Persian</option>
+            <option value="Ragdoll">Ragdoll</option>
+            <option value="Russian blue">Russian blue</option>
+            <option value="Savannah">Savannah</option>
+            <option value="Scottish fold">Scottish fold</option>
+            <option value="Siamese">Siamese</option>
+            <option value="Turkish angora">Turkish angora</option>
+            <option value="Other">Other</option>
+        </select>
+    </p>
+    <p>Visual description*
+        <textarea name="visualdesc" placeholder="Markings, physical features etc." id="visualdesc" required></textarea>
+    </p>
+    <p>Personality description*
+        <textarea name="personalitydesc" placeholder="Shy, playful etc." id="personalitydesc" required></textarea>
+    </p>
+    <p>
+      <!--  <label for='picfile'>Upload photo* </label><input type="file" name="picfile" id="picfile" required />
+        </p>
+    <p> !-->
+        <input type="submit" name="uploadcat" value="Upload" />
+    </p>
+</form>
+    </true>
+</check>
