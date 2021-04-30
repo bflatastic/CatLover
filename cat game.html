@@ -1,0 +1,114 @@
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <title>VirtualPet</title>
+
+    <meta name='theme-color' content='#94dff8'>
+    <meta name='mobile-web-app-capable' content='yes'>
+
+    <link rel='stylesheet' href='index.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Luckiest+Guy|Roboto'>
+
+    <link rel='icon' type='image/png' sizes='16x16' href='images/egg_happy.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='images/egg_happy_32.png'>
+    <link rel='icon' type='image/png' sizes='96x96' href='images/egg_happy_96.png'>
+    <link rel='icon' type='image/png' sizes='256x256' href='images/egg_happy_256.png'>
+    <link rel='apple-touch-icon' href='/images/egg_happy_256.png'>
+
+    <script src='index.js'></script>
+    <script src='lib/keymaster.js'></script>
+	  
+	 <!-- game --> 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/catlover.css">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+	  
+   <!-- Modal -->
+  <div class="modal fade" id="pop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="row">
+
+            <div class="col-lg-12 modal-info">
+              <div class="modal-info-title">
+                <h2>question</h2>
+              </div>
+              <div class="modal-desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <button class="modal-tag" data-bs-dismiss="modal" aria-label="Close">
+				 <div class='food0'>
+              <div class="content-tag">
+                  <p>the answer</p>
+                </div>		  
+			   </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- code to hide next two foods as they are not ready yet -->
+    <style>.food2,.food3{position:fixed;transform:translateY(-1000px);}</style>
+
+    <h1 class='heading'><span class='name'>New Pet</span></h1>
+    <div class='underHeading'><span class='edit'>Edit Name</span><span class='save'>Save Name</span></div>
+    <div class='floor'></div>
+    <div class='petColour'>
+      <div class='colPreview'></div>
+      <div class='colGradient'></div>
+      <input type='range' class='colSlider' min='-360' max='0'>
+      <span class='colSave'>Save Color</span>
+    </div>
+    <div class='controlsLeft'>
+      <div class='foodButtons'>
+       <a href="#pop" type="button" data-bs-toggle="modal" data-bs-target="#pop"> 
+		<div class='food1'></div>
+        <div class='food2 hidden'></div>
+        <div class='food3 hidden'></div>
+      </div>
+		</a>
+    </div>
+    <div class='controlsRight'>
+      <div class='exp'>
+        <div class='expBar'></div>
+        <div class='expLabel'>EXP</div>
+        <div class='expLevel'>0</div>
+      </div>
+      <button class='colour'>Pet Colour</button>
+    </div>
+    <div class='belowFloor'></div>
+    <div class='petWrapper'>
+      <div class='loveHeart'></div>
+      <div class='petBack'></div>
+      <div class='pet'></div>
+      <div class='foodFood'></div>
+    </div>
+    <div class='offScreen'></div>
+    <!-- The soon-to-be VirtualPet, by CyberPig and platy11. -->
+  </body>
+</html>
