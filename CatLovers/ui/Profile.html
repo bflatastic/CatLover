@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Cat Lover | {{ @userinfo.name }}</title>
+
+</head>
+
+<body class="bghome1">
+
+<!-- Back to top button -->
+<a id="back-top"></a>
+
+<!-- Title Section -->
+<div class="container">
+    <div class="profile-section">
+
+        <div class="row">
+
+            <div class="col-lg-7 profile-title">
+                <img src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/img/avatar({{ @userinfo.avno }}).png" alt="profile-image">
+                <div>
+                    <h2>{{ @userinfo.name }}</h2>
+                </div>
+            </div>
+            <div class="col-lg-5 profile-bio">
+                <p>{{ @userinfo.introduction }}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="pop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row">
+                    <div class="col-lg-7 modal-image-container">
+                        <img id="modalimage" alt="">
+                    </div>
+                    <div class="col-lg-5 modal-info">
+                        <div class="modal-info-title">
+                            <img class="modal-info-pfp w-25" src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/img/avatar({{ @userinfo.avno }}).png" alt="">
+                            <h2 class="modal-catname">BR Cat Home</h2>
+                        </div>
+                        <div class="modal-desc pb-4">
+                            <p>
+
+                            </p>
+                        </div>
+                        <div class="modal-tag">
+                            <div class="modal-label">
+                                <p>Available</p>
+                            </div>
+                            <div class="modal-id mt-3">
+                                Read more
+                            </div>
+                        </div>
+                        <div class="modal-body py-4">
+                            <div class="modal-info-title text-secondary">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <p class="modal-contact px-2">{{ @userinfo.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Details section -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-3 profile-side">
+            <div class="profile-side-group">
+                <check if="{{ @SESSION.ID == @userinfo.ID }}">
+                <true>
+                    <a class="btn btn-primary" style="color: #ffffff;" href="{{ @BASE }}/update-profile">Update your profile</a>
+                </true>
+                </check>
+            </div>
+            <div class="profile-side-group">
+                <h2>Contact Info</h2>
+                <p><i class="fa fa-envelope" style="width: 25px;" aria-hidden="true"></i><a class="link text-lowercase" href="mailto:{{ @userinfo.email }}">{{ @userinfo.email }}</a>
+                </p>
+                <p><i class="fa fa-phone" style="width: 25px;" aria-hidden="true"></i>{{ @userinfo.telephone }}</p>
+            </div>
+            <div class="profile-side-group">
+                <h2>Location</h2>
+                <p><i class="fa fa-map-marker" style="width: 25px;" aria-hidden="true"></i>{{ @userinfo.location }}</p>
+            </div>
+        </div>
+
+<!-- Photos Section -->
+        <div class="col-lg-9">
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <repeat group="{{ @datalist }}" value="{{ @item }}">
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="#pop" type="button" data-bs-toggle="modal" data-bs-target="#pop" data-id="{{ @item.ID }}" data-label="{{ @item.label }}" data-catname= "{{ @item.catname }}" data-personalitydesc="{{ @item.personalitydesc }}">
+                            <div class="card">
+                                <div class="content-tag-{{ @item.label }}">
+                                    <p>{{ @item.label }}</p>
+                                </div>
+                                <div class="content-profile">
+                                    <img class="content-profile-img" src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/img/avatar({{ @userinfo.avno }}).png"
+                                         alt="profile-image">
+                                    <p class="content-profile-text">{{ @item.catname }}</p>
+                                </div>
+                                <div class="gradient-overlay">
+                                    <img src="{{ @BASE }}/{{ @item.picfile }}"
+                                         alt="{{ @item.catname }}" onclick="onClick(this)">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </repeat>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+
+    $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+
+    function onClick(element) {
+        document.getElementById("modalimage").src = element.src;
+    }
+
+    // Back to top button
+    var btn = $('#back-top');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, '300');
+    });
+
+    var exampleModal = document.getElementById('pop')
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget
+        var desc = button.getAttribute('data-personalitydesc')
+        var modalDesc = exampleModal.querySelector('.modal-desc')
+        var catname = button.getAttribute('data-catname')
+        var modalCatname = exampleModal.querySelector('.modal-catname')
+        var piclabel = button.getAttribute('data-label')
+        var modalLabel = exampleModal.querySelector('.modal-label')
+        var catID = button.getAttribute('data-id')
+        var modalCTA = exampleModal.querySelector('.modal-id')
+
+        modalDesc.textContent = desc
+        modalCatname.textContent = catname
+        modalLabel.innerHTML = '<div class="content-tag-' + piclabel + '"><p>' + piclabel + '</p></div>'
+        modalCTA.innerHTML = '<a class="btn btn-outline-secondary upload-btn" href="{{ @BASE }}/cats/' + catID + '">Read more about ' + catname + '</a>'
+    })
+</script>
+
+
+
+
+</body>
+
+</html>

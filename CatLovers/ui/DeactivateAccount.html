@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cat Lover | Deactivate account</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-brand">
+                    <a class="navbar-brand" href="{{ @BASE }}/home">
+                        <img src="ui/img/catlover-logo.png" height="24" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/your-profile">{{ @username }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/share">Share</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/message-board">Message Board</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/help-advice">Help and advice</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-outline-light" style="border-radius: 8px;" href="{{ @BASE }}/logout">Log out</a>
+                </div>
+
+            </div>
+
+        </nav>
+
+<div class="container-fluid bgshare" style="height: 800px;">
+    <div class="container">
+        <div class="row section-2">
+            <div class="col-md d-flex justify-content-center">
+                <div class="home-text text-center justify-content-center">
+                    <h1>Are you sure?</h1>
+                    <div class="justify-content-center"></div>
+                    <img src="ui/img/section5-img.png" class="py-3" alt="">
+                    <div>
+                    <p>Deactivating your account will delete your profile and those of any cats associated with your account. Once they're gone, we won't be able to get them back.</p>
+                    <p class="py-3">If you're sure you want to do this, please enter your password.</p>
+                    </div>
+                    <div class="container w-25 justify-content-center">
+                        <form id="deleteAccount" name="deleteAccount" method="post" action="{{ @BASE }}/deactivate">
+
+                        <input class="form-control my-3" name="password" type="password" placeholder="Password" id="password" required />
+
+                        <input class="btn btn-primary my-3" type="submit" name="submit" value="Deactivate my account" />
+
+                    </form>
+                        <p><a href="{{ @BASE }}/users/{{ @SESSION.ID }}">Nevermind, take me back!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="container-fluid bg-primary bgfooter fixed-bottom">
+    <div class="container footer d-flex text-center justify-content-center align-items-center">
+        <p>───── &nbsp&nbsp&nbsp 2021 © Cat Lover &nbsp&nbsp&nbsp ─────</p>
+    </div>
+</div>
+</body>
+</html>
