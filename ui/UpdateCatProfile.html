@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cat Lover | Update profile</title>
+
+    <script>
+        $(document).ready(function(){
+            $("#savechanges").click(function(){
+                $('.toast').toast('show');
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div class="container col-md-12">
+
+    <ul class="list-group list-group-horizontal-sm" >
+
+        <li class="list-group-item">
+            <div class="form-group">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <br><br>
+                        <div style="text-align:center">
+                                <img name="img" src="http://jenniferjones.edinburgh.domains/beta/ImageUploads/{{ @data.picfile }}" style="border-radius: 10px" class="img-fluid" alt="">
+                        </div>
+                    <div class="modal-tag pt-3">
+                        <div class="content-tag-profile-{{ @data.label }} w-auto">
+                            <p>{{ @data.label }}</p>
+                        </div>
+                    </div>
+                    <br>
+                    <p class ="text-center" ><b>{{ @data.catname }}</b></p>
+                    <p class ="text-center text-lowercase" ><i class="fa fa-birthday-cake" style="width: 25px;" aria-hidden="true"></i> {{ @data.age }} years old</p>
+                    <p class ="text-center" ><i><i class="fa fa-paw" style="width: 25px;" aria-hidden="true"></i> {{ @data.breed }}</i></p>
+                </li>
+
+                <li class="list-group-item text-center">
+                    <a class="btn btn-outline-secondary" ref="#pop" type="button" data-bs-toggle="modal" data-bs-target="#pop">Remove {{ @data.catname }}'s profile</a>
+                </li>
+
+            </ul>
+
+        </div>
+        </li>
+        <li class="list-group-item col-md-6"><div class="form-group">
+            <div><br><br><br>
+                <p><h5 class="h1"><strong>Update {{ @data.catname }}'s information</strong></h5></p>
+                <p class="text-success">
+                    <include href="{{ @success }}" />
+                </p>
+                <form id="updateNameForm" name="updateCatName" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-name">
+                    <label for="updateCatName">Name</label>
+                    <div class="input-group mb-3">
+                        <input required type="text" name="updateCatName" class="form-control input-field" placeholder="{{ @data.catname }}" aria-describedby="updateName">
+                        <button class="btn btn-green" type="submit" id="updateCatName">Save name</button>
+                    </div>
+                </form>
+                <form id="updateAgeForm" name="updateCatAge" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-age">
+                    <label for="updateCatAge">(Approximate) Age</label>
+                    <div class="input-group mb-3">
+                        <input required type="number" name="updateCatAge" class="form-control input-field" placeholder="{{ @data.age }}" aria-describedby="updateAge">
+                        <button class="btn btn-green" type="submit" id="updateCatAge">Save age</button>
+                    </div>
+                </form>
+                <form id="updateBreedForm" name="updateCatBreed" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-breed">
+                    <label for="updateCatBreed">Breed</label>
+                    <div class="input-group mb-3">
+                        <select name="updateCatBreed" class="form-select" id="updateCatBreedChoice" placeholder="{{ @data.breed }}" aria-label="Breed">
+                            <option value="{{ @data.breed }}">{{ @data.breed }}</option>
+                            <option value="Domestic longhair">Domestic longhair</option>
+                            <option value="Domestic shorthair">Domestic shorthair</option>
+                            <option value="Abyssinian">Abyssinian</option>
+                            <option value="American shorthair">American shorthair</option>
+                            <option value="Balinese">Balinese</option>
+                            <option value="Bengal">Bengal</option>
+                            <option value="Birman">Birman</option>
+                            <option value="Bombay">Bombay</option>
+                            <option value="British longhair">British longhair</option>
+                            <option value="British shorthair">British shorthair</option>
+                            <option value="Burmese">Burmese</option>
+                            <option value="Chartreux">Chartreux</option>
+                            <option value="Cornish rex">Cornish rex</option>
+                            <option value="Devon rex">Devon rex</option>
+                            <option value="Egyptian mau">Egyptian Mau</option>
+                            <option value="Exotic shorthair">Exotic shorthair</option>
+                            <option value="Javanese">Javanese</option>
+                            <option value="Maine coon">Maine Coon</option>
+                            <option value="Manx">Manx</option>
+                            <option value="Norwegian forest">Norwegian forest</option>
+                            <option value="Oriental longhair">Oriental longhair</option>
+                            <option value="Oriental shorthair">Oriental shorthair</option>
+                            <option value="Persian">Persian</option>
+                            <option value="Ragdoll">Ragdoll</option>
+                            <option value="Russian blue">Russian blue</option>
+                            <option value="Savannah">Savannah</option>
+                            <option value="Scottish fold">Scottish fold</option>
+                            <option value="Siamese">Siamese</option>
+                            <option value="Turkish angora">Turkish angora</option>
+                            <option value="Other">Other (please specify in description)</option>
+                        </select>
+                        <button class="btn btn-green" type="submit" id="updateCatBreed">Save breed</button>
+                    </div>
+                </form>
+                    <form id="updateLocationForm" name="updateLocation" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-location">
+                        <label for="updateLocation">Change location</label>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control input-field" name="updateLocation" id="updateLocationtext" placeholder="{{ @data.location }}">
+                        <script>
+                            autocomplete.addListener("place_changed", fillIn);
+                            function fillIn() {
+                                const place = autocomplete.getPlace();
+                                for (const component of place.name) {
+                                    const componentType = component.types[0];
+
+                                    switch (componentType) {
+                                        case "name":
+                                            document.getElementById("updateLocationAutofill").value =
+                                                component.name;
+                                            break;
+                                    }
+                                }
+                            }
+                        </script>
+                        <input type="text" hidden name="updateLocationAutofill">
+
+                            <button class="btn btn-green" id="updateLocation" type="submit">Save Location</button>
+                        </div>
+                    </form>
+                <form id="updateVisualDescForm" name="updateVisualDesc" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-visualdesc">
+                    <label for="updateVisualDesc">Visual description</label>
+                    <div class="input-group mb-3">
+                        <textarea required type="text" name="updateVisualDesc" class="form-control input-field" placeholder="Markings, physical features etc." aria-describedby="updateVisualDescription"></textarea>
+                        <button class="btn btn-green" type="submit" id="updateVisualDesc">Save description</button>
+                    </div>
+                </form>
+                <form id="updatePersonalityDescForm" name="updatePersonalityDesc" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-personalitydesc">
+                    <label for="updatePersonalityDesc">Visual description</label>
+                    <div class="input-group mb-3">
+                        <textarea required type="text" name="updatePersonalityDesc" class="form-control input-field" placeholder="Shy, playful etc." aria-describedby="updatePersonalityDescription"></textarea>
+                        <button class="btn btn-green" type="submit" id="updatePersonalityDesc">Save description</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </li>
+
+        <li class="list-group-item col-md-3">
+            <div class="form-group">
+                <div><br><br><br>
+                    <h2 class="h5"><label for='newpicfile'><strong>Upload a new photo</strong></label></h2>
+                    <p>
+
+                        <input type="file" class="form-control" id="newpicfile" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        <button class="btn btn-green w-100 mt-3" type="button" id="uploadnewpicfile">Upload</button>
+                    <div id="fileHelp" class="form-text text-center">
+                        Max 5MB
+                    </div>
+                </div>
+
+            </div>
+            <div><br>
+                <h2 class="h5"><label for='updateLabel'><strong>Update {{ @data.catname }}'s adoption status</strong></label></h2>
+                <p>
+                <form id="updateLabelForm" name="updateLabel" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}/update-label">
+                    <select class="form-select" id="updateLabelChoice" name="updateLabel" placeholder="{{ @data.label }}" aria-label="Adoption status">
+                        <option value="Available">Available</option>
+                        <option value="Reserved">Reserved</option>
+                    </select>
+                    <button class="btn btn-green w-100 mt-3" type="submit" id="updateLabel">Update</button>
+                </form>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<!-- delete modal -->
+<div class="modal fade" id="pop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Are you sure?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-3">
+                <p>Are you sure you want to delete this profile?</p>
+                <p>Once it's gone, we won't be able to get it back.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-green" data-bs-dismiss="modal">Close</button>
+                <a type="button" class="btn btn-primary" href="{{ @BASE }}/cats/{{ @data.ID }}/delete">Delete profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+<!-- modal -->
+var exampleModal = document.getElementById('pop')
+exampleModal.addEventListener('show.bs.modal', function (event){
+
+})
+
+<!-- maps api -->
+
+let autocomplete;
+function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('updateLocationtext'),
+        {
+            types: ['(cities)'],
+            fields: ['place_id', 'geometry', 'name']
+        });
+    autocomplete.addListener('place_changed', onPlaceChanged);
+}
+function onPlaceChanged(){
+    var place = autocomplete.getPlace();
+    if (!place.geometry){
+        document.getElementById('autocomplete').placeholder = 'Where?';
+    }
+    else {
+        document.getElementById('details').innerHTML = place.name;
+    }
+}
+
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtzu_Qxn3X0rQwbgikgXp9hjkvIXdUVsQ&libraries=places&callback=initAutocomplete"></script>
+
+</body>
+</html>

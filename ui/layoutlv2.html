@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/img/paw-home.png" rel="icon" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/css/catlover.css">
+    <script src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/js/jquery-3.5.1.min.js"></script>
+    <script src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/js/bootstrap.min.js"></script>
+    <script src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/js/bootstrap.js"></script>
+    <script src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/js/colcade.js"></script>
+    <script src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/js/masonry.pkgd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+<check if="{{ @SESSION.name=='UNSET' }}">
+    <true>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-brand">
+                    <a class="navbar-brand" href="{{ @BASE }}/home">
+                        <img src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/img/catlover-logo.png" height="24" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/cats">Cats looking for homes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/message-board">Message board</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/help-advice">Help and advice</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="btn btn-outline-light" style="border-radius: 8px;" href="{{ @BASE }}/login">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary" href="{{ @BASE }}/signup">Sign Up</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+    </true>
+    <false>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-brand">
+                    <a class="navbar-brand" href="{{ @BASE }}/home">
+                        <img src="http://jenniferjones.edinburgh.domains/beta/CatLover/ui/img/catlover-logo.png" height="24" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/users/{{ @SESSION.ID }}">{{ @username }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/cats">Cats looking for homes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/message-board">Message Board</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ @BASE }}/help-advice">Help and advice</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-outline-light" style="border-radius: 8px;" href="{{ @BASE }}/logout">Log out</a>
+                </div>
+
+            </div>
+
+        </nav>
+    </false>
+</check>
+
+<check if="{{ @SESSION.name=='UNSET' }}">
+    <false>
+        <include href="{{ @content }}" />
+    </false>
+    <true>
+        <check if="{{ @restricted }}">
+            <true>
+                <div class="container mt-5 bghome1">
+                    <div class="text-center">
+                        <h1>Paws off! <img class="paw-icon" src="ui/img/paw-home.png" alt=""></h1>
+                        <img src="ui/img/section2-img.png" alt="" class="w-25">
+                        <p>You need to be logged in to view this page.</p>
+                        <p><a class="btn btn-primary home-bottom-btn" href="{{ @BASE }}/login">Log in</a></p>
+                    </div>
+                    <div class="text-center mt-5">
+
+                        <h2>New to Cat Lover? </h2>
+                        <p>Join us to share your own cat stories.</p>
+                        <p><a class="btn btn-green home-bottom-btn" href="{{ @BASE }}/signup">Sign Up</a></p>
+
+                    </div>
+                </div>
+            </true>
+            <false>
+                <include href="{{ @content }}" />
+            </false>
+        </check>
+    </true>
+</check>
+
+<!-- Footer -->
+<div class="container-fluid bg-primary bgfooter">
+    <div class="container footer d-flex text-center justify-content-center align-items-center">
+        <p>───── &nbsp&nbsp&nbsp 2021 © Cat Lover &nbsp&nbsp&nbsp ─────</p>
+    </div>
+</div>
+</body>
+</html>
