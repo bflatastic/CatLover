@@ -4,7 +4,7 @@
 
     <title>Cat Lover | Login</title>
 </head>
-<body class="home-body bghome1">
+<body class="home-body">
 
 <div class="container">
     <div class="text-center">
@@ -135,4 +135,12 @@ function onPlaceChanged(){
 }
 
 </script>
+
+<script>
+    var bgColorArray = ['https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/bg1.png','https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/bg2.png'],
+    selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+
+    document.body.style.backgroundImage = 'url(' + selectBG + ')';
+</script>
+
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtzu_Qxn3X0rQwbgikgXp9hjkvIXdUVsQ&libraries=places&callback=initAutocomplete"></script>
