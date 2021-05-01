@@ -27,14 +27,28 @@
 
                 </div>
 
-
+                <div class="profile-side-group">
                 <check if="{{ @data.ownerID == @SESSION.ID}}">
                     <true>
-                        <div class="profile-side-group">
                             <a class="btn btn-primary" style="color: #ffffff; width: 250px;" href="{{ @BASE }}/cats/{{ @data.ID }}/update">Update {{ @data.catname }}'s profile</a>
-                        </div>
+
                     </true>
+                    <false>
+                        <check if="{{ @onfavs=='1' }}">
+                            <true>
+                                <form id="removeFavs" name="removeFavs" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}">
+                                    <button class="btn btn-outline-favs text-nowrap" style="width: 250px;" type="submit"><i class="fa fa-heart" style="width: 25px;"></i> Remove from favourites</button>
+                                </form>
+                            </true>
+                            <false>
+                                <form id="addFavs" name="addFavs" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}">
+                                    <button class="btn btn-favs" style="width: 250px;" type="submit"><i class="fa fa-heart" style="width: 25px;"></i> Add to favourites</button>
+                                </form>
+                            </false>
+                        </check>
+                    </false>
                 </check>
+                </div>
                     <div class="profile-side-group">
                         <h2>Owner</h2>
                         <i class="fa fa-user" style="width: 25px;" aria-hidden="true"></i><a class="text-capitalize" href="{{ @BASE }}/users/{{ @ownerdata.ID }}">{{ @ownerdata.name }}</a>
@@ -60,7 +74,6 @@
                 <p>{{ @data.visualdesc }}</p>
                 <p>{{ @data.personalitydesc }}</p>
             </div>
-
         </div>
     </div>
 </div>
