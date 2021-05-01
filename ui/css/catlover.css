@@ -598,6 +598,8 @@ h3 {
 
 .modal-desc {
     font-size: 14px;
+    max-height: 210px;
+    margin-bottom: 25px;
 }
 
 @media (min-width: 992px) {
