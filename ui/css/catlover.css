@@ -735,6 +735,14 @@ h3 {
     justify-content: center;
 }
 
+.form-upload {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 50px 0;
+}
+
 .form-inner {
     width: 450px;
     padding-bottom: 20px;
@@ -893,8 +901,6 @@ input {
     .container {
         width: 80%;
     }
-
-
 }
 
 .img-catprofile {
