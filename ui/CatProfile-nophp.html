@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Lover | {{ @data.catname }} is up for adoption</title>
+</head>
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/catlover.css">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<body class="bghome1">
+
+<!-- Back to top button -->
+<a id="back-top"></a>
+
+<!-- Title Section -->
+<div class="container">
+    <div class="profile-section pb-3">
+
+        <div class="row">
+
+            <div class="col-lg-4">
+                <img class="pb-3 img-catprofile" style="border-radius: 10px; max-height: 500px;" src="https://picsum.photos/id/237/200/300" alt="A photo of {{ @data.catname }}">
+                <div>
+                    <div><h1>{{ @data.catname }}</h1></div>
+                        <div class="modal-tag pb-3">
+                                <div class="content-tag-profile-{{ @data.label }}">
+                                    <p>{{ @data.label }}</p>
+                                </div>
+                        </div>
+
+                </div>
+
+                <div class="profile-side-group">
+
+
+
+                    
+                <check if="{{ @data.ownerID == @SESSION.ID}}">
+                    <true>
+                            <a class="btn btn-primary" style="color: #ffffff; width: 250px;" href="{{ @BASE }}/cats/{{ @data.ID }}/update">Update {{ @data.catname }}'s profile</a>
+
+                    </true>
+                    <false>
+                        <check if="{{ @onfavs=='1' }}">
+                            <true>
+                                <form id="removeFavs" name="removeFavs" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}">
+                                    <button class="btn btn-outline-favs text-nowrap" style="width: 250px;" type="submit"><i class="fa fa-heart" style="width: 25px;"></i> Remove from favourites</button>
+                                </form>
+                            </true>
+                            <false>
+                                <form id="addFavs" name="addFavs" method="post" action="{{ @BASE }}/cats/{{ @data.ID }}">
+                                    <button class="btn btn-favs" style="width: 250px;" type="submit"><i class="fa fa-heart" style="width: 25px;"></i> Add to favourites</button>
+                                </form>
+                            </false>
+                        </check>
+                    </false>
+                </check>
+                </div>
+                    <div class="profile-side-group">
+                        <h2>Owner</h2>
+                        <i class="fa fa-user" style="width: 25px;" aria-hidden="true"></i><a class="text-capitalize" href="{{ @BASE }}/users/{{ @ownerdata.ID }}">{{ @ownerdata.name }}</a>
+                    </div>
+
+                    <div class="profile-side-group profile-side">
+                            <h2>Contact Info</h2>
+                            <p><i class="fa fa-envelope" style="width: 25px;" aria-hidden="true"></i><a class="link text-lowercase" href="mailto:{{ @ownerdata.email }}">{{ @ownerdata.email }}</a>
+                            </p>
+                            <p><i class="fa fa-phone" style="width: 25px;" aria-hidden="true"></i>{{ @ownerdata.telephone }}</p>
+                    </div>
+
+                <div class="profile-side-group profile-side">
+                    <h2>{{ @data.catname }}'s location</h2>
+                    <p><i class="fa fa-map-marker" style="width: 25px;" aria-hidden="true"></i>{{ @data.location }}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8 profile-bio-cat">
+                <h2>Meet {{ @data.catname }}</h2>
+                <p><i class="fa fa-birthday-cake" style="width: 25px;" aria-label="age"></i> {{ @data.age }} years old <i class="fa fa-paw" style="width: 25px;" aria-label="breed"></i> {{ @data.breed }}</p>
+
+                <p>{{ @data.visualdesc }}</p>
+                <p>{{ @data.personalitydesc }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Details section
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-3 profile-side">
+            <check if="{{ @data.account == @SESSION.email}}"></check>
+            <true>
+            <div class="profile-side-group">
+                <a class="btn btn-primary" style="color: #ffffff; width: 250px;" href="{{ @BASE }}/update-profile">Update {{ @data.catname }}'s profile</a>
+            </div>
+            </true>
+            </check>
+            <div class="profile-side-group">
+                <h2>Owner</h2>
+                {{ @data.username }}
+            </div>
+
+            <div class="profile-side-group">
+                <h2>Contact Info</h2>
+                <p><i class="fa fa-envelope" style="width: 25px;" aria-hidden="true"></i><a class="link" href="mailto:{{ @useremail }}">{{ @data.account }}</a>
+                </p>
+                <p><i class="fa fa-phone" style="width: 25px;" aria-hidden="true"></i>{{ @userphone }}</p>
+            </div>
+        </div>-->
+
+        <!-- Photos Section
+        <div class="col-lg-9">
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <repeat group="{{ @datalist }}" value="{{ @item }}">
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="#pop" type="button" data-bs-toggle="modal" data-bs-target="#pop" data-piclabel= "{{ @item.piclabel }}" data-catname= "{{ @item.picname }}" data-picdesc="{{ @item.picdesc }}" data-contact="{{ @item.picusername }}">
+                            <div class="card">
+                                <div class="content-tag-{{ @item.piclabel }}">
+                                    <p>{{ @item.piclabel }}</p>
+                                </div>
+                                <div class="content-profile">
+                                    <img class="content-profile-img" src="ui/img/avatar({{ @avno }}).png"
+                                         alt="profile-image">
+                                    <p class="content-profile-text">{{ @item.picname }}</p>
+                                </div>
+                                <div class="gradient-overlay">
+                                    <img src="{{ @BASE }}/{{ @item.picfile }}"
+                                         alt="{{ @item.picname }}" onclick="onClick(this)">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </repeat>
+
+            </div>-->
+
+</body>
+</html>

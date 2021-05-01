@@ -115,8 +115,8 @@ h3 {
     bottom: 20px;
     right: 20px;
     transition: background-color .3s,
-    opacity .5s,
-    visibility .5s;
+        opacity .5s,
+        visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
@@ -166,7 +166,7 @@ h3 {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06),
-    0 6px 20px 0 rgba(0, 0, 0, 0.06);
+        0 6px 20px 0 rgba(0, 0, 0, 0.06);
 }
 
 .navbar-toggler {
@@ -835,7 +835,8 @@ input {
     border-color: #ffd2ca !important;
 }
 
-.form-inner select option div:hover, .same-as-selected {
+.form-inner select option div:hover,
+.same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -895,6 +896,19 @@ input {
 
 
 }
+
+.img-catprofile {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    padding-bottom: 0 !important;
+    margin-bottom: 20px;
+}
+
+.profile-bio-cat {
+    text-align: left;
+}
+
 
 /*File Input*/
 .btn-file {
@@ -1069,7 +1083,7 @@ input {
     padding-bottom: 2px;
 }
 
-.profile-side a{
+.profile-side a {
     color: #91BAA1;
 }
 
