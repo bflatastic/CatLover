@@ -18,7 +18,6 @@
             <div class="col-lg-4">
                 <img class="pb-3 img-catprofile" style="border-radius: 10px;" src="http://jenniferjones.edinburgh.domains/beta/ImageUploads/{{ @data.picfile }}" alt="A photo of {{ @data.catname }}">
                 <div>
-                    <div><h1>{{ @data.catname }}</h1></div>
                         <div class="modal-tag pb-3">
                                 <div class="content-tag-profile-{{ @data.label }}">
                                     <p>{{ @data.label }}</p>
@@ -68,7 +67,7 @@
             </div>
 
             <div class="col-lg-8 profile-bio-cat">
-                <h2>Meet {{ @data.catname }}</h2>
+                <div><h1>{{ @data.catname }}</h1></div>
                 <p><i class="fa fa-birthday-cake" style="width: 25px;" aria-label="age"></i> {{ @data.age }} years old <i class="fa fa-paw" style="width: 25px;" aria-label="breed"></i> {{ @data.breed }}</p>
 
                 <p>{{ @data.visualdesc }}</p>
