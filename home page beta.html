@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/catlover.css">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+
+  <title>Cat Lover</title>
+</head>
+
+<body class="home-body">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-brand">
+        <a class="navbar-brand" href="#">
+          <img src="img/catlover-logo.png" height="24" alt="" loading="lazy" />
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="share.html">Share</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Message Board</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-primary login-btn" href="#">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-primary" href="#">Sign up</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <div class="container-fluid bghome1">
+    <div class="container h-100vh">
+      <div class="row home-section">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <h1>Give us a chance to warm<br>each other. <img class="paw-icon" src="img/paw-home.png" alt="paw-home ">
+            </h1>
+            <p>
+              Cat Lovers is a content sharing website focused on telling the heartwarming stories of stray cats who
+              have found loving homes. We provide a platform to connect stray shelters with cat lovers who are looking
+              for a new furry friend, allowing them to portray the unique soul of each stray cat and find their
+              perfect match.
+              <br><br>
+              We also offer help and advice on looking after your cat, and provide a community space where you can
+              share photos of your beloved shelter cats and connect with other cat lovers.
+            </p>
+            <a class="btn btn-primary home-btn" href="#exprience cat life">Exprience Cat Life</a>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_uultxlbm.json" background="transparent"
+              speed="1" loop autoplay></lottie-player>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgpink" id="exprience cat life">
+    <div class="container">
+      <div class="row section-2">
+     
+        <div class="home-text text-center justify-content-center">
+			<h1>Experience the life of a cat</h1>
+		</div>
+            <div class="d-flex justify-content-center">
+		  <p>Experience the life of  cats and you will know them better, Click on the kitten to experience its life</p><br><br><br><br></div>
+		  
+<script> 
+$(document).ready(function(){
+  $("#cat1").click(function(){
+    $("#expriencecatlife1").slideToggle("slow");
+	$("#catstorydot1").slideToggle("slow");
+	$("#expriencecatlife2").slideUp("slow");
+	$("#expriencecatlife3").slideUp("slow");
+	$("#catstorydot2").slideUp("slow");
+	$("#catstorydot3").slideUp("slow");
+  });
+});
+	
+</script>  
+		  
+		  
+<style>
+#catstorydot1 {
+  display: none;
+}
+</style>			  
+		  
+        <div class="col-md-4 d-flex justify-content-center">
+		
+          <div class="home-image">
+			  <div class="w-100" alt="">
+			<a class="nav-link active" aria-current="page"  onclick="myFunction()" href="#exprience cat life" id="cat1">
+		  <img src="img/CatStoryAvatar-1.png" style="width: 90%;" >
+		    </a>  
+			 <div class="text-center">
+			  <img  src="img/catstorydot.png" style="width:10%;" id=catstorydot1>
+			  </div>  
+			  </div>
+          </div>
+		
+        </div>
+		  
+<script> 
+$(document).ready(function(){
+  $("#cat2").click(function(){
+    $("#expriencecatlife2").slideToggle("slow");
+	$("#catstorydot2").slideToggle("slow");
+	$("#expriencecatlife1").slideUp("slow");
+	$("#expriencecatlife3").slideUp("slow");
+	$("#catstorydot1").slideUp("slow");
+	$("#catstorydot3").slideUp("slow");
+  });
+});
+</script> 
+
+
+<style>
+#catstorydot2 {
+  display: none;
+}
+</style>		  
+		  
+	    <div class="col-md-4 d-flex justify-content-center" id=cat2>
+		
+          <div class="home-image">
+			  <div class="w-100" alt="">
+			 
+			  <a class="nav-link active" aria-current="page" href="#exprience cat life" >
+			  <img src="img/CatStoryAvatar-2.png" style="width: 90%;">
+				  </a>
+			  <div class="text-center">
+			  <img  src="img/catstorydot.png" style="width:10%;" id=catstorydot2>
+			  </div>
+			  </div>
+          </div>
+        </div>
+		  
+		  <script> 
+$(document).ready(function(){
+  $("#cat3").click(function(){
+    $("#expriencecatlife3").slideToggle("slow");
+	$("#catstorydot3").slideToggle("slow");
+	$("#expriencecatlife1").slideUp("slow");
+	$("#expriencecatlife2").slideUp("slow");
+	$("#catstorydot1").slideUp("slow");
+	$("#catstorydot2").slideUp("slow");
+  });
+});
+</script> 
+		  
+<style>
+#catstorydot3 {
+  display: none;
+}
+</style>			  
+		  
+		        <div class="col-md-4 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100" alt="">
+			<a class="nav-link active" aria-current="page" id="cat3" href="#exprience cat life">
+			  <img src="img/CatStoryAvatar-3.png" style="width: 80%;">
+			 </a>
+				
+			<div class="text-center">
+			  <img  src="img/catstorydot.png" style="width:10%;" id=catstorydot3>
+			  </div>	  
+		
+			  </div>
+          </div>
+        </div>
+        
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- cat 1-->
+<style>
+#expriencecatlife1 {
+  padding: 50px;
+  display: none;
+}
+</style>
+
+	<div class="container-fluid bghome1" id="expriencecatlife1">
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100" alt="">
+		<img src="img/cat1story1.png">
+			  
+			  </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              You used to have a very warm home, and you and your owner often played together. Your favorite thing is to sleep on her shoulder. She will touch you tenderly and tell you that she will always take care of you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              However, your owner has more and more work tasks, and the time spent playing with you is gradually decreasing. When you interrupt her work to get her attention, she is no longer as gentle as before, and sometimes even yells at you. Although she would apologize to you afterwards, you know that you are getting estranged.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+           <div class="w-100" alt="">
+			  <img src="img/cat1story2.png">
+			  
+			  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100"  alt="">
+			  <img src="img/cat1story3.png">
+			  
+			  </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              In order not to disturb her work, you choose to play yarn balls in the corner by yourself. One day you hear your owner call and say that she will give you to someone else. You were very sad at first, but you can understand her because she doesn't have enough time and energy to hold you. Therefore, you finally accepted her choice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row section-6">
+          <div class="col-md d-flex justify-content-center">
+            <div class="home-text text-center justify-content-center">
+              <div alt="">
+				<img src="img/cat1story4.png">
+			  
+			  </div>
+              <div class="d-flex justify-content-center">
+                <p>
+                  When I met my new owner, I felt that I was back to the scene where I met her (the previous owner). The bright smile of the new owner infected me, and my life was full of sunshine again.
+                </p>
+              </div>
+              <a class="btn btn-primary home-btn home-bottom-btn" href="share.html">See cat stories / Adopt one</a><br><br>
+				<a  class="home-bottom-btn" href="#exprience cat life">Back To Choose Another Cat</a>
+			  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+	
+<!--cat 2-->
+	
+<style> 
+
+#expriencecatlife2 {
+  padding: 50px;
+  display: none;
+}
+</style>
+	
+  <div class="container-fluid bghome1" id="expriencecatlife2">
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100" alt="">
+			  <lottie-player 
+		id="straycat-1" 
+		src="https://assets10.lottiefiles.com/packages/lf20_xrjdjxws.json"  
+		>
+		</lottie-player>
+			  
+			  </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              One day, when you woke up and found yourself in a box, you slowly poked your head out and found that the surrounding environment was so strange to you. At this time you realize that you may have been abandoned by your previous owner.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              Without a fixed food source, you are often hungry. You dare not go to the garbage dump and grab food from other wild cats. You can only walk by the side of the road to see if you can get away with the food leftover by others. You are very sad and fantasize that one day your master will come and find you.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+           <div class="w-100" alt="">
+			  <lottie-player 
+		id="straycat-2" 
+		src="https://assets4.lottiefiles.com/packages/lf20_fcbyfyu4.json"  
+		>
+		</lottie-player>
+			  
+			  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100"  alt="">
+			  <lottie-player 
+		id="straycat-3" 
+		src="https://assets9.lottiefiles.com/packages/lf20_delqzhur.json"  
+		>
+		</lottie-player>
+			  
+			  </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              In winter, you have not found a place to survive the winter, you can only sleep on the road. When the cold wind blows, you shiver. You may not be able to survive this winter quickly. At this moment you feel that someone is coming towards you. You are nervous and afraid, hoping that he is here to save you, but also afraid that he will hurt you. Your tired body makes you unable to move.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row section-6">
+          <div class="col-md d-flex justify-content-center">
+            <div class="home-text text-center justify-content-center">
+              <div alt="">
+				<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_o7bhzkdw.json"  background="transparent"  speed="1"    loop  autoplay></lottie-player>
+			  
+			  </div>
+              <div class="d-flex justify-content-center">
+                <p>
+                  When you wake up again, you find that you are in a warm environment. The eyes of the person beside him were full of tenderness. He touched your head and told you not to be afraid, he will give you a warm home. Since then you and your new owner have lived a happy life.
+                </p>
+              </div>
+              <a class="btn btn-primary home-btn home-bottom-btn" href="share.html">See cat stories / Adopt one</a><br><br>
+				<a  class="home-bottom-btn" href="#exprience cat life">Back To Choose Another Cat</a>
+			  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+	
+  <!-- animation-1 -->
+  <script>	
+  LottieInteractivity.create({
+    player:"#straycat-1",
+    mode:"scroll",
+    actions: [
+      {
+        visibility: [0, 0.2],
+        type: "stop",
+        frames: [0]
+      },
+      {
+        visibility: [0.2, 0.35],
+        type: "seek",
+        frames: [0, 62]
+      },
+      {
+        visibility: [0.35, 1.0],
+        type: "loop",
+        frames: [62, 125]
+      }
+    ]
+  });
+  </script>
+	
+  <!-- animation-2 -->
+ <script>	
+  LottieInteractivity.create({
+    player:"#straycat-2",
+    mode:"scroll",
+    actions: [
+      {
+        visibility: [0, 0.25],
+        type: "stop",
+        frames: [0]
+      },
+      {
+        visibility: [0.25, 0.42],
+        type: "seek",
+        frames: [0, 53]
+      },
+      {
+        visibility: [0.42, 1.0],
+        type: "loop",
+        frames: [53, 125]
+      }
+    ]
+  });
+  </script>
+	
+ <!-- animation-3 -->
+	 <script>	
+  LottieInteractivity.create({
+    player:"#straycat-3",
+    mode:"scroll",
+    actions: [
+      {
+        visibility: [0, 0.25],
+        type: "stop",
+        frames: [0]
+      },
+      {
+        visibility: [0.25, 0.42],
+        type: "seek",
+        frames: [0, 53]
+      },
+      {
+        visibility: [0.42, 1.0],
+        type: "loop",
+        frames: [53, 125]
+      }
+    ]
+  });
+  </script>
+	
+	
+<!-- cat 3-->
+<style>
+#expriencecatlife3 {
+  padding: 50px;
+  display: none;
+}
+</style>
+
+	<div class="container-fluid bghome1" id="expriencecatlife3">
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100" alt="">
+		<img src="img/cat3story1.png">
+			  
+			  </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              When you were born, you had many brothers and sisters, and you often played carefree. As you grow up, the owner is going to give you to different people. Because a cat is pregnant, the owner considers that there are too many cats in the house and needs to give away some.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              You are lucky enough to meet a good person, and she is kind to you. But it seems that she is not very good at raising cats. For example, she often forgets to prepare cat litter for you and does not know how much food should be prepared for you.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+           <div class="w-100" alt="">
+			  <img src="img/cat3story2.png">
+			  
+			  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row section-2">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-image">
+			  <div class="w-100"  alt="">
+			  <img src="img/cat3story3.png">
+			  
+			  </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="home-text">
+            <p>
+              Finally, she realizes that she may not be suitable for keeping cats, so she prepares to give you to someone who is experienced in raising cats. When you heard this while sitting in a chair, you didn't feel sad, but rather happy. Because you will soon have to experience a different life in a different environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row section-6">
+          <div class="col-md d-flex justify-content-center">
+            <div class="home-text text-center justify-content-center">
+              <div alt="">
+				<img src="img/cat3story4.png">
+			  
+			  </div>
+              <div class="d-flex justify-content-center">
+                <p>
+                  But the right person seems to have not come yet, and you are waiting for her with expectation and joy. Imagine the beautiful things you will experience together.
+                </p>
+              </div>
+              <a class="btn btn-primary home-btn home-bottom-btn" href="share.html">See cat stories / Adopt one</a><br><br>
+				<a  class="home-bottom-btn" href="#exprience cat life">Back To Choose Another Cat</a>
+			  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+	
+  <!-- Footer -->
+  <div class="container-fluid bg-primary bgfooter">
+    <div class="container footer d-flex text-center justify-content-center align-items-center">
+        <p>───── &nbsp&nbsp&nbsp 2021 © Cat Lover &nbsp&nbsp&nbsp ─────</p>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
