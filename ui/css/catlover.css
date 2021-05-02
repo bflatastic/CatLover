@@ -1118,3 +1118,29 @@ input {
     font-size: 18px;
     font-weight: 700;
 }
+
+@media (max-width: 991.98px) {
+    .profile-section {
+        padding: 20px 0 20px 0;
+    }
+
+    .profile-title {
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-title img {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    .profile-bio {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .profile-side-group {
+        text-align: center;
+    }
+}
