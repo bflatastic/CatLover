@@ -350,12 +350,6 @@ h3 {
 
 .home-image {
     width: 80%;
-    display: none;
-}
-
-.home-image-mobile {
-    width: 80%;
-    display: none;
 }
 
 .home-btn {
@@ -866,10 +860,6 @@ input {
     .container {
         width: 90%;
     }
-
-    .home-image {
-        display: block;
-    }
 }
 
 @media (max-width: 768px) {
@@ -888,10 +878,6 @@ input {
 
     .home-bottom-btn {
         width: 90%;
-    }
-
-    .home-image-mobile {
-        display: block;
     }
 }
 
