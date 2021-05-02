@@ -899,6 +899,10 @@ input {
     display: inline-block;
 }
 
+.profile-bio-cat {
+    text-align: left;
+}
+
 
 @media (min-width: 1080px) {
     .grid-col--3 {
