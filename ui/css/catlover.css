@@ -100,14 +100,14 @@ h3 {
 /*  Background   */
 
 .bg-primary {
-    background-color: #084635 !important;
+    background-color: #61A4A8 !important;
 }
 
 /*  Nav   */
 
 #back-top {
     display: inline-block;
-    background-color: #084635;
+    background-color: #61A4A8;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -394,13 +394,13 @@ h3 {
     left: 0;
     width: 100%;
     height: 250px;
-    background: rgb(0, 46, 33);
+    background: rgba(97, 164, 168, 0.33);
     background: linear-gradient(0deg, rgba(0, 46, 33, 0.80015756302521) 0%, rgba(0, 46, 33, 0.4023984593837535) 20%, rgba(0, 46, 33, 0) 45%, rgba(0, 46, 33, 0) 100%);
 }
 
 .content-tag-Available {
     position: absolute;
-    background-color: #2f6953de;
+    background-color: rgba(97, 164, 168, 0.87);
     padding: 5px 10px;
     top: 12px;
     left: 12px;
@@ -410,7 +410,7 @@ h3 {
 }
 
 .content-tag-profile-Available {
-    background-color: #2f6953de;
+    background-color: rgba(97, 164, 168, 0.87);
     width: 250px;
     padding: 5px 10px;
     top: 12px;
@@ -533,7 +533,7 @@ h3 {
 }
 
 .modal-image-container {
-    min-height: 600px;
+    height: 600px;
     max-height: 600px;
     overflow: hidden;
     background-color: #000;
