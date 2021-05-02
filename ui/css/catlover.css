@@ -714,7 +714,7 @@ h3 {
 
 #main-section {
     transition: margin-left .1s;
-    padding: 80px 0 25px 0;
+    padding: 65px 0 25px 0;
 }
 
 #main-section h1 {
@@ -1142,5 +1142,9 @@ input {
 
     .profile-side-group {
         text-align: center;
+    }
+
+    #main-section {
+        padding: 30px 0 25px 0;
     }
 }
