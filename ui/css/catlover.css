@@ -253,9 +253,9 @@ h3 {
 }
 
 .btn-outline-green:hover {
-    background-color: #084635;
+    background-color: #08463685;
     color: #FFFFFF;
-    border-color: #084635;
+    border-color: #08463685;
     transition: 0.2s;
 }
 
@@ -350,6 +350,12 @@ h3 {
 
 .home-image {
     width: 80%;
+    display: none;
+}
+
+.home-image-mobile {
+    width: 80%;
+    display: none;
 }
 
 .home-btn {
@@ -860,6 +866,10 @@ input {
     .container {
         width: 90%;
     }
+
+    .home-image {
+        display: block;
+    }
 }
 
 @media (max-width: 768px) {
@@ -879,8 +889,15 @@ input {
     .home-bottom-btn {
         width: 90%;
     }
+
+    .home-image-mobile {
+        display: block;
+    }
 }
 
+.list-group-item {
+    border: none;
+}
 
 .addcat .list-group-item {
     width: 100%;
